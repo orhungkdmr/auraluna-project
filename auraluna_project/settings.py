@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'cloudinary_storage', 
     'django.contrib.staticfiles', 
     'cloudinary', 
-    'whitenoise.runserver_nostatic', # Geliştirme sunucusunda static'i devre dışı bırakır
+
 
     # Kendi Uygulamalarımız
     'products',
