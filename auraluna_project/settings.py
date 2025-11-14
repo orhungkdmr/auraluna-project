@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 # ==================================================
-# === GÜVENLİK AYARLARI ===
+# === GÜVENLİK AYARLARI (.env'den okunur) ===
 # ==================================================
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
@@ -25,10 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     
-    # Cloudinary Storage (staticfiles'dan önce)
+    # Canlıya alma (Cloudinary & Whitenoise)
     'cloudinary_storage', 
     'django.contrib.staticfiles', 
     'cloudinary', 
+    'whitenoise.runserver_nostatic', # Geliştirme sunucusunda static'i devre dışı bırakır
 
     # Kendi Uygulamalarımız
     'products',
