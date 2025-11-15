@@ -104,13 +104,14 @@ USE_TZ = True
 # ==================================================
 # === STATİK VE MEDYA AYARLARI (Canlı) ===
 # ==================================================
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 # Django'ya collectstatic için Orijinal dosyaların nerede olduğunu söyle:
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # collectstatic'in dosyaları toplayacağı yer:
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Whitenoise depolaması:
-STATICFILES_STORAGE = 'whitenoise.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 # Cloudinary Medya ayarları:
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL') 
