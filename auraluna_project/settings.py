@@ -105,7 +105,7 @@ USE_TZ = True
 # ==================================================
 # === STATİK VE MEDYA AYARLARI (Canlı) ===
 # ==================================================
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 # Django'ya collectstatic için Orijinal dosyaların nerede olduğunu söyle:
 STATICFILES_DIRS = [
     BASE_DIR / "static"
