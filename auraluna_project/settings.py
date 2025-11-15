@@ -3,14 +3,14 @@ import os
 # .env dosyasını okumak için importlar
 import dj_database_url
 from dotenv import load_dotenv
-print("BASE_DIR =", BASE_DIR)
-print("STATICFILES_DIRS =", [os.path.join(BASE_DIR, 'static')])
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # .env dosyasını yükle
 load_dotenv(os.path.join(BASE_DIR, '.env'))
-
+print("BASE_DIR =", BASE_DIR)
+print("STATICFILES_DIRS =", [os.path.join(BASE_DIR, 'static')])
 # ==================================================
 # === GÜVENLİK AYARLARI (.env'den okunur) ===
 # ==================================================
