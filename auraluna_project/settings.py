@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'cloudinary_storage', 
     'django.contrib.staticfiles', 
     'cloudinary', 
-    # 'whitenoise.runserver_nostatic', # BU SATIRIN SİLİNDİĞİNDEN EMİN OLUN
+    # 'whitenoise.runserver_nostatic' YANLIŞTI - BURADA OLMAMALI
 
     # Kendi Uygulamalarımız
     'products',
@@ -109,17 +109,14 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # collectstatic'in dosyaları toplayacağı yer:
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# HATA DÜZELTMESİ: Whitenoise storage'ı kaldırıp Django'nun standart
-# depolama sistemini kullanıyoruz. Whitenoise, MIDDLEWARE'de
-# STATIC_ROOT'tan dosyaları sunmaya devam edecektir.
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' 
+# Whitenoise depolaması:
+STATICFILES_STORAGE = 'whitenoise.storage.ManifestStaticFilesStorage'
 
 # Cloudinary Medya ayarları:
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL') 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-CLOUDINARY_STORAGE_MANAGE_STATICFILES = False 
-MEDIA_URL = '/media/'
+CLOUDINARY_STORAGE_MANAGE_STATICFILES = False # Statik dosyaları yönetme
+MEDIA_URL = '/media/' 
 # ==================================================
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
