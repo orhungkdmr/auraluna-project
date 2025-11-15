@@ -3,6 +3,8 @@ import os
 # .env dosyasını okumak için importlar
 import dj_database_url
 from dotenv import load_dotenv
+print("BASE_DIR =", BASE_DIR)
+print("STATICFILES_DIRS =", [os.path.join(BASE_DIR, 'static')])
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -106,7 +108,9 @@ USE_TZ = True
 # ==================================================
 STATIC_URL = '/static/'
 # Django'ya collectstatic için Orijinal dosyaların nerede olduğunu söyle:
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 # collectstatic'in dosyaları toplayacağı yer:
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Whitenoise depolaması:
