@@ -9,8 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # .env dosyasını yükle
 load_dotenv(os.path.join(BASE_DIR, '.env'))
-print("BASE_DIR =", BASE_DIR)
-print("STATICFILES_DIRS =", [os.path.join(BASE_DIR, 'static')])
+
 # ==================================================
 # === GÜVENLİK AYARLARI (.env'den okunur) ===
 # ==================================================
@@ -116,7 +115,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Whitenoise depolaması:
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-
+print("BASE_DIR =", BASE_DIR)
+print("STATICFILES_DIRS =", [os.path.join(BASE_DIR, 'static')])
 # Cloudinary Medya ayarları:
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL') 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
