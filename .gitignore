@@ -1,1 +1,6 @@
 .env
+# static/ satırı silindi
+staticfiles/
+media/
+*.pyc
+...
